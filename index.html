@@ -295,7 +295,7 @@ body::before{
 .contact__links{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .contact__links a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .4s var(--ease)}
 .contact__links a:hover{padding-left:14px}
-.contact__links .display{font-size:clamp(22px,2.6vw,36px)}
+.contact__links .display{font-size:clamp(20px,2.6vw,36px);overflow-wrap:anywhere}
 .contact__links .arrow{width:22px;height:22px;stroke:var(--stone);fill:none;stroke-width:1.4;transition:transform .4s var(--ease)}
 .contact__links a:hover .arrow{transform:translate(4px,-4px)}
 
@@ -619,9 +619,8 @@ body::before{
       <div class="reveal">
         <p class="contact__lead">Conta a ideia, a data e onde vai ser. Clipe, show, evento, ensaio ou campanha: a gente transforma em filme.</p>
         <div class="contact__links">
-          <a data-link="whatsapp" href="#" target="_blank" rel="noopener"><span><span class="mono">WhatsApp</span><br><span class="display" data-text="whatsapp">Chamar agora</span></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
-          <a data-link="instagram" href="#" target="_blank" rel="noopener"><span><span class="mono">Instagram</span><br><span class="display" data-text="instagram">@ryanfilms</span></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
-          <a data-link="email" href="#"><span><span class="mono">E-mail</span><br><span class="display" data-text="email" style="text-transform:none">contato</span></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+          <a data-link="whatsapp" href="https://wa.me/558699589699" target="_blank" rel="noopener"><span><span class="mono">WhatsApp · (86) 9958-9699</span><br><span class="display">Chamar agora</span></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+          <a data-link="instagram" href="https://www.instagram.com/ryann_videomaker_/" target="_blank" rel="noopener"><span><span class="mono">Instagram</span><br><span class="display" data-text="instagram">@ryann_videomaker_</span></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -683,10 +682,9 @@ body::before{
    CONTATOS: troque aqui e os links do site todo são atualizados
    ========================================================= */
 const CONTATO = {
-  whatsapp: "5500000000000",            // DDI + DDD + número, só dígitos
+  whatsapp: "558699589699",             // DDI + DDD + número, só dígitos (+55 86 9958-9699)
   mensagem: "Olá Ryan! Vi seu portfólio e quero fazer um orçamento.",
-  instagram: "ryanfilms",               // sem @
-  email: "contato@ryanfilms.com.br"
+  instagram: "ryann_videomaker_"        // sem @
 };
 
 /* ---------- dados: filmes ---------- */
@@ -731,10 +729,9 @@ const pad = n => String(n).padStart(2,"0");
 /* ---------- links de contato ---------- */
 (function(){
   const wa = `https://wa.me/${CONTATO.whatsapp}?text=${encodeURIComponent(CONTATO.mensagem)}`;
-  const map = { whatsapp: wa, instagram:`https://instagram.com/${CONTATO.instagram}`, email:`mailto:${CONTATO.email}` };
+  const map = { whatsapp: wa, instagram:`https://www.instagram.com/${CONTATO.instagram}/` };
   $$("[data-link]").forEach(a => a.href = map[a.dataset.link]);
   const ig = $('[data-text="instagram"]'); if (ig) ig.textContent = "@" + CONTATO.instagram;
-  const em = $('[data-text="email"]'); if (em) em.textContent = CONTATO.email;
 })();
 
 /* ---------- vinheta (1x por sessão) ---------- */
