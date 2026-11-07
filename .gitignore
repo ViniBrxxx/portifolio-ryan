@@ -1,0 +1,4 @@
+# Material bruto do cliente (arquivos grandes, não usados pelo site)
+assets/
+.DS_Store
+Thumbs.db
